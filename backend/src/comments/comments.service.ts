@@ -12,11 +12,16 @@ export class CommentsService {
   ) {}
 
   create(createCommentDto: CreateCommentDto) {
-    return 'This action adds a new comment';
+    const createdComment = this.commentModel.create({
+      text: createCommentDto.text,
+      user: createCommentDto.userId,
+      parent: createCommentDto.parentId || null,
+    });
+    return createdComment;
   }
 
   findAll() {
-    return this.commentModel.find().exec();
+    return this.commentModel.find().populate(['user']).exec();
   }
 
   findOne(id: number) {
