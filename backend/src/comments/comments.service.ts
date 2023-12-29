@@ -17,11 +17,13 @@ export class CommentsService {
       user: createCommentDto.userId,
       parent: createCommentDto.parentId || null,
     });
-    return createdComment;
+    return createdComment.then((comment) => {
+      return comment.populate(['user', 'parent']);
+    });
   }
 
   findAll() {
-    return this.commentModel.find().populate(['user']).exec();
+    return this.commentModel.find().populate(['user', 'parent']).exec();
   }
 
   findOne(id: number) {
