@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<div class="min-h-screen flex flex-col">
+  <header
+    class="h-12 bg-indigo-700 text-white flex justify-between items-center px-3"
+  >
+    <span>Threads</span>
+    <nav>
+      <ul class="flex gap-4 text-gray-200">
+        <li class="hover:text-white duration-100">
+          <a routerLinkActive="underline underline-offset-4" routerLink="/home"
+            >Home</a
+          >
+        </li>
+        <li class="hover:text-white duration-100">
+          <a routerLinkActive="underline underline-offset-4" routerLink="/about"
+            >About</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="px-3 py-4">
+    <router-outlet></router-outlet>
+  </main>
+</div>
