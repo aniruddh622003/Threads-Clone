@@ -1,5 +1,5 @@
 <article
-  class="relative block overflow-hidden rounded-lg border border-gray-100 p-4 sm:p-6 lg:p-8"
+  class="relative block overflow-hidden rounded-lg border border-gray-200 p-4 sm:p-6 lg:p-8 shadow-md"
 >
   <span
     class="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-green-300 via-blue-500 to-purple-600"
@@ -22,20 +22,19 @@
   </div>
 
   <dl class="mt-6 flex gap-4 sm:gap-6">
-    <a
-      class="group inline-block rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-[2px] hover:text-white duration-75 focus:outline-none focus:ring active:text-opacity-75"
-      href="/download"
+    <button
+      (click)="toggleReply()"
+      class="group inline-block rounded-full bg-gradient-to-r from-green-300 via-blue-500 to-purple-600 p-[2px] hover:text-white duration-75 focus:outline-none active:text-opacity-75"
     >
       <span
         class="block rounded-full duration-100 bg-white px-8 py-3 text-sm font-medium group-hover:bg-transparent"
       >
         Reply
       </span>
-    </a>
+    </button>
     <div class="flex items-center gap-2">
-      <a
-        class="group inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"
-        href="/download"
+      <button
+        class="group inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none active:text-opacity-75"
       >
         <span
           class="block rounded-full bg-white px-3 py-3 text-sm font-medium group-hover:bg-transparent"
@@ -66,7 +65,7 @@
             />
           </svg> -->
         </span>
-      </a>
+      </button>
       12 Likes
     </div>
     <button
@@ -88,4 +87,9 @@
       </svg>
     </button>
   </dl>
+  @if (isExpanded){ @if (isReplying){
+  <section class="reply">Reply</section>
+  }
+  <section class="nested-comments">Nested Comments</section>
+  }
 </article>
