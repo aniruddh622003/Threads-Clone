@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { WriteCommentComponent } from '../write-comment/write-comment.component';
 
 @Component({
   selector: 'app-comment',
   standalone: true,
-  imports: [],
+  imports: [WriteCommentComponent],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.scss',
 })

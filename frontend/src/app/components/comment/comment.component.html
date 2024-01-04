@@ -88,8 +88,11 @@
     </button>
   </dl>
   @if (isExpanded){ @if (isReplying){
-  <section class="reply">Reply</section>
+  <section class="reply"><app-write-comment></app-write-comment></section>
   }
-  <section class="nested-comments">Nested Comments</section>
+  <section class="nested-comments">
+    <app-comment></app-comment>
+    <app-comment></app-comment>
+  </section>
   }
 </article>
